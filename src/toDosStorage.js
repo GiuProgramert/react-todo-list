@@ -2,6 +2,22 @@ const setTodos = (todos) => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
+export const changeCompleted = (id) => {
+  const todos = getToDos();
+  const updatedTodos = todos.map((todo) => {
+    if(id === todo.id) {
+      return {
+        id: todo.id,
+        title: todo.title,
+        description: todo.description,
+        completed: !todo.completed,
+      }
+    }
+    return todo
+  })
+  setTodos(updatedTodos);
+}
+
 export const getToDos = () => {
   if (JSON.parse(localStorage.getItem("todos")) === null) {
     setTodos([]);
@@ -16,6 +32,7 @@ export const addToDo = (todo) => {
     id,
     title: todo.title,
     description: todo.description,
+    completed: false
   });
   setTodos(todos);
 };

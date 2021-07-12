@@ -7,7 +7,7 @@ class TableTodos extends Component {
 
     return toDos.length === 0 ? 
     (
-      <div>Don't have toDos</div>
+      <div>Don't have to dos</div>
     ) : 
     (
       <table>
@@ -15,7 +15,7 @@ class TableTodos extends Component {
           <tr>
             <th>Title</th>
             <th>Description</th>
-            <th>Actions</th>
+            <th>Completed</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +23,7 @@ class TableTodos extends Component {
             return <TableItemTodo 
               toDo={toDo} 
               key={toDo.id}
+              changeCompleted={this.props.changeCompleted}
             />;
           })}
         </tbody>
