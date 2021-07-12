@@ -7,55 +7,57 @@ class InputTodos extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.restarInputs = this.restarInputs.bind(this);
-    
+
     this.state = {
-      title: '',
-      description: '',
-    }
+      title: "",
+      description: "",
+    };
   }
 
   restarInputs() {
     this.setState({
-      title: '',
-      description: ''
-    })
+      title: "",
+      description: "",
+    });
   }
 
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     this.props.addToDo({
       title: this.state.title,
       description: this.state.description,
-    })
-    this.restarInputs()
+    });
+    this.restarInputs();
   }
 
   handleTitleChange(e) {
     this.setState({
       title: e.target.value,
-    })
+    });
   }
 
   handleDescriptionChange(e) {
     this.setState({
       description: e.target.value,
-    })
+    });
   }
-  
+
   render() {
+    const { title, description } = this.state;
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input 
+          <input
             type="text"
-            value={this.state.title}
+            value={title}
             onChange={this.handleTitleChange}
             placeholder="Title"
           />
           <input
             type="text"
             placeholder="description"
-            value={this.state.description}
+            value={description}
             onChange={this.handleDescriptionChange}
           />
           <button>Save</button>
@@ -65,4 +67,4 @@ class InputTodos extends Component {
   }
 }
 
-export default InputTodos
+export default InputTodos;

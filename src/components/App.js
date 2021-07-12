@@ -10,18 +10,31 @@ import TableTodos from "./TableTodos";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleAddTodo = this.handleAddTodo.bind(this);
+
     this.state = {
-      todos: getToDos()
+      toDos: getToDos()
     }
   }
 
+  handleAddTodo(toDo) {
+    addToDo(toDo);
+    this.setState({
+      toDos: getToDos(),
+    })
+  }
+
   render() {
+    const { toDos } = this.state;
+
     return (
       <div>
         <InputTodos 
-          addToDo={addToDo}
+          addToDo={this.handleAddTodo}
         />
-        <TableTodos/>
+        <TableTodos
+          toDos={toDos}
+        />
       </div>
     );
   }
