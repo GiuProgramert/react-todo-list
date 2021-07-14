@@ -1,5 +1,8 @@
 import { Component } from "react";
 
+//CSS
+import "../app.css";
+
 class InputTodos extends Component {
   constructor(props) {
     super(props);
@@ -23,11 +26,13 @@ class InputTodos extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addToDo({
-      title: this.state.title,
-      description: this.state.description,
-    });
-    this.restarInputs();
+    if (this.state.title.trim() !== "" && this.state.description.trim() !== "") {
+      this.props.addToDo({
+        title: this.state.title,
+        description: this.state.description,
+      });
+      this.restarInputs();
+    }
   }
 
   handleTitleChange(e) {
@@ -46,22 +51,27 @@ class InputTodos extends Component {
     const { title, description } = this.state;
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={title}
-            onChange={this.handleTitleChange}
-            placeholder="Title"
-          />
-          <input
-            type="text"
-            placeholder="description"
-            value={description}
-            onChange={this.handleDescriptionChange}
-          />
-          <button>Save</button>
-        </form>
+      <div className="inputs-container">
+        <div className="inputs">
+          Add some to do
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={title}
+              onChange={this.handleTitleChange}
+              placeholder="Title"
+              required
+            />
+            <input
+              type="text"
+              placeholder="description"
+              value={description}
+              onChange={this.handleDescriptionChange}
+              required
+            />
+            <button>Save</button>
+          </form>
+        </div>
       </div>
     );
   }

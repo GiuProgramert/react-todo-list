@@ -1,4 +1,6 @@
 import { Component } from "react";
+
+//CSS
 import '../app.css';
 
 class TableItemTodo extends Component {
@@ -17,7 +19,7 @@ class TableItemTodo extends Component {
     return (
       <tr>
         <td className={completed ? 'completed-to-do' : ''}>{title}</td>
-        <td className={completed ? 'completed-to-do' : ''}>{description}</td>
+        <td className={(completed ? 'completed-to-do' : '') + ' table-item'}>{description}</td>
         <td>
           <input 
             type="checkbox"

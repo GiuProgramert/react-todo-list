@@ -1,3 +1,131 @@
+/* JetBrains mono */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap');
+
+:root{
+  --primary-color: rgb(78, 78, 78);
+  --inputs-border-collor: rgba(235, 233, 227, 0.822);
+}
+
+body {
+  background-image: url('background.png');
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.todos-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .completed-to-do {
+  color: rgb(108, 110, 110);
   text-decoration: line-through;
+}
+
+/** Grid */
+
+.row {
+  width: 70%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--inputs-border-collor);
+  border-radius: 3px;
+}
+
+/** Inputs styles */
+
+.inputs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs-container .inputs {
+  background-color: white;
+  width: 40%;
+  padding: 40px;
+  border-radius: 6px;
+}
+
+.inputs-container input {
+  border: 2px solid var(--inputs-border-collor);
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.inputs-container button {
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+}
+
+/** Table styles */
+
+.table-container {
+  background-color: white;
+  margin: 5px;
+}
+
+.table {
+  width: 100;
+  border: 1px solid var(--primary-color);
+  border-radius: 2px;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  border-top: 1px solid var(--primary-color);
+}
+
+.table th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.table tr:nth-child(even) {
+  background-color: rgba(138, 138, 136, 0.822);
+}
+
+.table tr {
+  cursor: pointer;
+}
+
+.table tr:hover {
+  font-style: italic;
+  background-color: rgba(140, 162, 201, 0.822);
+}
+
+.table-item {
+  border-left: 1px solid var(--primary-color);
+}
+
+/** Media queries */
+
+@media (max-width: 1100px) {
+  .inputs-container .inputs {
+    width: 90%;
+  }
+}
+
+@media (max-width: 720px) {
+  .inputs-container .inputs {
+    width: 90%;
+  }
+  .row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+    width: 90%;
+  }
 }
