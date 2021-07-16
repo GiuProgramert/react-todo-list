@@ -1,6 +1,11 @@
 /* JetBrains mono */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root{
   --primary-color: rgb(78, 78, 78);
   --inputs-border-collor: rgba(235, 233, 227, 0.822);
@@ -9,6 +14,16 @@
 body {
   background-image: url('background.png');
   font-family: 'JetBrains Mono', monospace;
+}
+
+
+nav {
+  color: white;
+  background-color: var(--primary-color);
+  margin-bottom: 10px;
+  padding: 20px 5px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .todos-container {
@@ -22,6 +37,8 @@ body {
   color: rgb(108, 110, 110);
   text-decoration: line-through;
 }
+
+/** Nav bar styles */
 
 /** Grid */
 
@@ -57,12 +74,21 @@ body {
   margin-bottom: 10px;
 }
 
-.inputs-container button,
-td button
-{
+.inputs-container button {
   color: white;
   font-weight: bold;
   padding: 10px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+td button {
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  margin: 3px 0;
   background-color: var(--primary-color);
   border: 2px solid var(--primary-color);
   border-radius: 3px;

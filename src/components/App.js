@@ -7,6 +7,7 @@ import { addToDo, getToDos, changeCompleted, deleteToDo } from "../toDosStorage"
 import "../app.css";
 
 //Componets
+import NavBar from './NavBar';
 import InputTodos from "./InputTodos";
 import TableTodos from "./TableTodos";
 
@@ -48,7 +49,7 @@ class App extends Component {
 
     return (
       <div className="main-container">
-        <div className="nav-container"></div>
+        <NavBar/>
         <div className="todos-container">
           <div className="row">
             <InputTodos addToDo={this.handleAddTodo} />
