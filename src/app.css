@@ -83,7 +83,7 @@ td button:hover {
 }
 
 .table {
-  width: 100;
+  width: 100%;
   border: 1px solid var(--primary-color);
   border-radius: 2px;
   border-collapse: collapse;
