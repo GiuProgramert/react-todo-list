@@ -18,6 +18,7 @@ class TableTodos extends Component {
               <th>Title</th>
               <th>Description</th>
               <th>Completed</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -27,6 +28,7 @@ class TableTodos extends Component {
                   toDo={toDo}
                   key={toDo.id}
                   changeCompleted={this.props.changeCompleted}
+                  clickDeleteTodo={this.props.clickDeleteTodo}
                 />
               );
             })}

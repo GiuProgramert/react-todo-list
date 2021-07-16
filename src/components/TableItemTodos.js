@@ -7,10 +7,15 @@ class TableItemTodo extends Component {
   constructor(props) {
     super(props);
     this.handleCompletedChange = this.handleCompletedChange.bind(this);
+    this.handleDeleteTodoClick = this.handleDeleteTodoClick.bind(this);
   }
 
   handleCompletedChange() {
     this.props.changeCompleted(this.props.toDo.id);
+  }
+
+  handleDeleteTodoClick() {
+    this.props.clickDeleteTodo(this.props.toDo.id);
   }
 
   render() {
@@ -26,6 +31,11 @@ class TableItemTodo extends Component {
             onChange={this.handleCompletedChange}
             checked={completed === true ? true : false}
           />
+        </td>
+        <td>
+          <button onClick={this.handleDeleteTodoClick}>
+            <i className="fas fa-trash"></i>
+          </button>
         </td>
       </tr>
     );

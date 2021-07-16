@@ -1,7 +1,7 @@
 import { Component } from "react";
 
 //Todos Storages
-import { addToDo, getToDos, changeCompleted } from "../toDosStorage";
+import { addToDo, getToDos, changeCompleted, deleteToDo } from "../toDosStorage";
 
 //CSS
 import "../app.css";
@@ -15,6 +15,7 @@ class App extends Component {
     super(props);
     this.handleAddTodo = this.handleAddTodo.bind(this);
     this.handleCompletedTodo = this.handleCompletedTodo.bind(this);
+    this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
 
     this.state = {
       toDos: getToDos(),
@@ -35,6 +36,13 @@ class App extends Component {
     });
   }
 
+  handleDeleteTodo(id) {
+    deleteToDo(id);
+    this.setState({
+      toDos: getToDos(),
+    })
+  }
+
   render() {
     const { toDos } = this.state;
 
@@ -47,6 +55,7 @@ class App extends Component {
             <TableTodos
               toDos={toDos}
               changeCompleted={this.handleCompletedTodo}
+              clickDeleteTodo={this.handleDeleteTodo}
             />
           </div>
         </div>

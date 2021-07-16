@@ -36,3 +36,9 @@ export const addToDo = (todo) => {
   });
   setTodos(todos);
 };
+
+export const deleteToDo = (id) => {
+  const todos = getToDos();
+  const filteredTodos = todos.filter(todo => todo.id !== id);
+  setTodos(filteredTodos)
+}

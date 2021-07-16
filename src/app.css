@@ -57,13 +57,22 @@ body {
   margin-bottom: 10px;
 }
 
-.inputs-container button {
+.inputs-container button,
+td button
+{
   color: white;
   font-weight: bold;
   padding: 10px;
   background-color: var(--primary-color);
   border: 2px solid var(--primary-color);
   border-radius: 3px;
+  cursor: pointer;
+}
+
+.inputs-container button:hover,
+td button:hover {
+  background-color: rgb(104, 104, 104);
+  border: 2px solid rgb(104, 104, 104);
 }
 
 /** Table styles */
