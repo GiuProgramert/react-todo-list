@@ -2,7 +2,7 @@
 
 In the project directory, you can run:
 
-First you need to run `npm install` and before that you will able to run the project
+First you need to run `npm install` and after that you will able to run the project
 
 ### `npm start`
 
