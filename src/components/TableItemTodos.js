@@ -23,8 +23,8 @@ class TableItemTodo extends Component {
 
     return (
       <tr>
-        <td className={completed ? 'completed-to-do' : ''}>{title}</td>
-        <td className={(completed ? 'completed-to-do' : '') + ' table-item'}>{description}</td>
+        <td className={(completed ? 'completed-to-do' : '') + ' table-title-item'}>{title}</td>
+        <td className={(completed ? 'completed-to-do' : '') + ' table-description-item'}>{description}</td>
         <td>
           <input 
             type="checkbox"
