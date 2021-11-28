@@ -11,7 +11,7 @@ class TableTodos extends Component {
     return toDos.length === 0 ? (
       <div>Don't have to dos</div>
     ) : (
-      <div class="table-container">
+      <div className="table-container">
         <table className="table">
           <thead>
             <tr className="table-header">
