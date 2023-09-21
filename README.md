@@ -1,3 +1,14 @@
+## table of contents
+- [About the project](#about-the-project)
+- [Available Scripts](#available-scripts)
+
+## About the project
+
+Project created to practice React.js framework
+
+### Pictures
+![picture](static/demostration.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
